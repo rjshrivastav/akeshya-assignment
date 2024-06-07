@@ -1,0 +1,76 @@
+---
+---
+
+
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="flex justify-center items-center gap-2 mt-20 font-sans">
+    <div class="border-b-[3px] w-[4rem] border-[#14279b]"></div>
+    <h1 class="font-bold text-3xl">ABOUT US</h1>
+    <div class="border-b-[3px] w-[4rem] border-[#14279b]"></div>
+  </div>
+  <div class="flex p-16 justify-around">
+    <div class="left-text w-[40vw]">
+      <p class="mb-5">We are Akeshya, a firm that specializes in web design and marketing. We help transform ideas into reality with a team of passionate graphic designers, web developers, and seasoned marketing advisors.</p>
+      <p class="flex gap-3 mb-2"><img class="w-[20px]" src="/public/checked-doubleline.svg" alt="">We started with a simple idea: do what is best for the client.</p>
+      <p class="flex gap-3 mb-2 items-start"><img class="w-[25px] mt-1" src="/public/checked-doubleline.svg" alt="">Our methodical and individual approach to each project delivers the finest possible results for your media.</p>
+      <p class="flex gap-3 items-start"><img class="w-[30px] mt-1" src="/public/checked-doubleline.svg" alt="">Our day-to-day work is to solve your problems utilizing the most up-to-date, practical adaptive technology, and we have a lot of fun doing it.</p>
+    </div>
+    <div class="right-text w-[40vw]">
+      <p>We're professional, but we're also friendly, and we'll always pay attention to your concerns. We expect to work with innovative people that have an open mind and are dedicated to making every idea a reality. We want to hear from you if you're interested in SEO, have Web Development ideas, or require a graphic designer who can match your goals.</p>
+      <button class="border-2 border-[#14279b] rounded-full mt-12 w-[9rem] h-[3rem] text-[17px] text-blue-800 hover:bg-[#14279b] hover:text-white">Learn More</button>
+    </div>
+  </div>
+
+  <div class="flex justify-around items-center">
+    <div class="img">
+      <img class="w-[600px] h-[600px]" src="/public/counts-img.svg" alt="">
+    </div>
+    <div class="counts grid grid-cols-2">
+        <div>
+            <img src="/public/icons/smiley.svg" alt="">
+      <div id="reach" class="text-4xl font-bold text-gray-800"></div>
+        </div>
+        <div>
+            <img src="/public/icons/journal.svg" alt="">
+      <div class="text-4xl font-bold text-gray-800">85</div>
+        </div>
+        <div>
+            <img src="/public/icons/clock.svg" alt="">
+      <div id="wh" class="text-4xl font-bold text-gray-800"></div>
+        </div>
+        <div>
+            <img src="/public/icons/globe.svg" alt="">
+      <div class="text-4xl font-bold text-gray-800">17</div>
+        </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const obj1 = document.getElementById('reach');
+      const obj2 = document.getElementById('wh');
+
+      animateValue(obj1, 3834739, 3835039, 5000);
+      animateValue(obj2, 14000, 14081, 5000);
+    });
+
+    function animateValue(obj, start, end, duration) {
+      let startTimestamp = null;
+      const step = (timestamp) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        obj.innerHTML = Math.floor(progress * (end - start) + start).toLocaleString();
+        if (progress < 1) {
+          window.requestAnimationFrame(step);
+        }
+      };
+      window.requestAnimationFrame(step);
+    }
+  </script>
+</body>
+
+</html>
