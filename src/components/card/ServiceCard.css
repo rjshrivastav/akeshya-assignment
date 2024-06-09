@@ -1,0 +1,127 @@
+.card-container {
+    margin: 0 auto;
+  }
+  .card-item {
+    width: 20vw;
+    /* height: 55vh; */
+    -ms-flex-preferred-size: calc(33.33333% - 30px);
+    flex-basis: calc(33.33333% - 30px);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 0 15px 30px;
+  
+    overflow: hidden;
+  
+    border-radius: 10px;
+  }
+  .item_link {
+    display: block;
+    padding: 30px 30px;
+    background-color: #ffffff;
+  
+    overflow: hidden;
+  
+    position: relative;
+  }
+  .item_link:hover{
+
+    .icon{
+        background-color: #ffffff;
+
+        .svg_icon{
+            path{
+                fill: #14279b;
+                }
+        }
+
+        svg{
+            g{
+            stroke:#14279b;
+        }
+    }
+    }
+    .desc, .title {
+    text-decoration: none;
+    color: #ffffff;
+  }
+
+  .item_bg {
+    -webkit-transform: scale(10);
+    -ms-transform: scale(10);
+    transform: scale(10);
+    background-color: #14279b;
+  }
+
+}
+
+  .title {
+    margin-top: 10px;
+    margin-bottom: 25px;
+  
+    overflow: hidden;
+  
+    font-weight: bold;
+    font-size: 20px;
+    color: #000000;
+  
+    z-index: 2;
+    position: relative;
+  }
+  .desc {
+    font-size: 16px;
+    color: #000000;
+    z-index: 2;
+    position: relative;
+  }
+  .item_bg {
+    height: 128px;
+    width: 128px;
+    background-color: #e1f0fa;
+  
+    z-index: 1;
+    position: absolute;
+    top: -75px;
+    right: -75px;
+  
+    border-radius: 60%;
+  
+    -webkit-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    transition: all .5s ease;
+  }
+  
+  
+  
+  @media only screen and (max-width: 979px) {
+    .card-item {
+      -ms-flex-preferred-size: calc(50% - 30px);
+      flex-basis: calc(50% - 30px);
+    }
+    .title {
+      font-size: 24px;
+    }
+  }
+  
+  @media only screen and (max-width: 767px) {
+    .card-container {
+      width: 96%;
+    }
+  
+  }
+  @media only screen and (max-width: 639px) {
+    .card-item {
+      -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+    }
+    .title {
+      min-height: 72px;
+      line-height: 1;
+  
+      font-size: 24px;
+    }
+    .item_link {
+      padding: 22px 40px;
+    }
+    .desc {
+      font-size: 16px;
+    }
+  }
