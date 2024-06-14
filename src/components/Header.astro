@@ -1,21 +1,54 @@
 ---
 ---
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navbar Example</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const menuButton = document.querySelector("#menu-button");
+      const menu = document.querySelector("#menu");
+
+      menuButton.addEventListener("click", function () {
+        menu.classList.toggle("hidden");
+        if (menu.classList.contains("hidden")) {
+          menuButton.innerHTML = "&#9776;"; // Menu icon
+        } else {
+          menuButton.innerHTML = "&times;"; // Cross icon
+        }
+      });
+    });
+  </script>
 </head>
-  
-  <header class="text-black p-4 font-raleway">
-    <nav class="container bg-white flex justify-between fixed z-10 top-0 items-center pl-[7rem]">
-      <div class="text-2xl font-bold text-[#14279b] ">
-        <a href="#" class="flex items-center text-3xl"><img width="60px" height="60px" src="/public/logo.png" alt="logo">AKESHYA</a>
-      </div>
-      <div class="flex gap-6 items-center pr-[7rem]">
-        <a href="#" class="hover:text-blue-800">Home</a>
-        <a href="#" class="hover:text-blue-800">About</a>
-        <a href="#" class="hover:text-blue-800">Services</a>
-        <a href="#"><button class="bg-[#14279b] text-white w-[8rem] h-[2.5rem] rounded-full  hover:bg-blue-500">Contact Us</button></a>
-      </div>
-    </nav>
-  </header>
-  
+<body class="bg-gray-100">
+  <nav class="navbar bg-white flex justify-between fixed z-10 top-0 items-center pl-2 lg:pl-[7rem] h-[6rem] w-[100vw]">
+    <div class="text-2xl font-bold text-[#14279b] lg:pl-10">
+      <a href="#" class="flex items-center text-3xl">
+        <img width="60px" height="60px" src="/public/logo.png" alt="logo"> AKESHYA
+      </a>
+    </div>
+    <div class="hidden lg:flex gap-6 items-center pr-[7rem]">
+      <a href="#" class="hover:text-blue-800">Home</a>
+      <a href="#" class="hover:text-blue-800">About</a>
+      <a href="#" class="hover:text-blue-800">Services</a>
+      <a href="#"><button class="bg-[#14279b] text-white w-[8rem] h-[2.5rem] rounded-full hover:bg-blue-500">Contact Us</button></a>
+    </div>
+    <div class="lg:hidden pr-[2rem]">
+      <button id="menu-button" class="text-3xl focus:outline-none">
+        &#9776;
+      </button>
+    </div>
+  </nav>
+  <div id="menu" class="hidden fixed z-10 top-[6rem] left-0 w-[100vw] bg-white lg:hidden">
+    <div class="flex flex-col items-center py-4 justify-center">
+      <a href="#" class="py-2 hover:text-blue-800">Home</a>
+      <a href="#" class="py-2 hover:text-blue-800">About</a>
+      <a href="#" class="py-2 hover:text-blue-800">Services</a>
+      <a href="#"><button class="bg-[#14279b] text-white w-[8rem] h-[2.5rem] rounded-full hover:bg-blue-500">Contact Us</button></a>
+    </div>
+  </div>
+</body>
+</html>

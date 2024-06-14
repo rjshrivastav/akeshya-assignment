@@ -111,6 +111,7 @@
     .card-item {
       -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
+      width: 90vw;
     }
     .title {
       min-height: 72px;
